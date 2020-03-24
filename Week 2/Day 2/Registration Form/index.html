@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form - Vanilla</title>
+  </head>
+  <body>
+    <div id="registration-form">
+      <form action="#" method="post">
+        <label for="first_name">First Name</label><br />
+        <input
+          type="text"
+          id="first_name"
+          name="first_name"
+          required
+        /><br /><br />
+        <label for="last_name">Last Name</label><br />
+        <input
+          type="text"
+          id="last_name"
+          name="last_name"
+          required
+        /><br /><br />
+        <label for="email">Email</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email-address"
+          required
+        /><br /><br />
+        <label for="zip_code">Zip Code</label><br />
+        <input
+          type="text"
+          inputmode="numeric"
+          id="zip_code"
+          name="zip_code"
+          placeholder="123456"
+          pattern="[0-9]*"
+          minlength="6"
+          maxlength="6"
+          required
+        />
+        <br /><br />
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <label for="practicing_status">Practing Status</label><br />
+        <select id="practicing_status" name="practicing_status" required>
+          <option value="0">Practing Lawyer</option>
+          <option value="1">NoN Practing Lawyer</option>
+          <option value="2">Retired Lawyer</option>
+        </select>
+        <br /><br />
+        <label for="legal_expertise">Legal Expertise</label><br />
+        <select id="legal_expertise" name="legal_expertise">
+          <option value="antitrust">Antitrust</option>
+          <option value="civil_rights">Civil Rights</option>
+          <option value="immigration">Inmigration</option>
+          <option value="memes">Memes</option>
+          <option value="gaming">Gaming</option>
+          <option value="pretending_to_work">Pretending to work</option>
+          <option value="other">Other</option> </select
+        ><br /><br />
+        <label for="years_of_experience">Years of experience</label><br />
+        <input
+          type="number"
+          name="years_of_experience"
+          id="years_of_experience"
+          min="0"
+          max="60"
+          required
+        />
+        <br /><br />
+        <label for="languages">Languages</label><br />
+        <select name="languages" id="languages" multiple>
+          <option value="es">Spanish</option>
+          <option value="en">English</option>
+          <option value="do">Dothraki</option>
+          <option value="ky">Kryptonese</option>
+          <option value="kl">Klingon</option>
+          <option value="vu">Vulcan</option>
+          <option value="ali">Alienese</option>
+          <option value="el">Elvish</option> </select
+        ><br /><br />
+        <label for="phone_number">Cell Phone Number</label><br />
+        <input
+          type="text"
+          name="phone_number"
+          id="phone_number"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          minlength="9"
+          maxlength="9"
+          placeholder="#######"
+        />
+        <br /><br />
+        <label for="ethnicity">Ethnicity</label><br />
+        <input
+          type="radio"
+          name="ethnicity"
+          id="earthling"
+          value="earthling"
+          required
+        />
+        <label for="earthling">Earthling</label><br />
+        <input type="radio" name="ethnicity" id="martian" value="martian" />
+        <label for="martian">Martian</label><br />
+        <input type="radio" name="ethnicity" id="asgardian" value="asgardian" />
+        <label for="asgardian">Asgardian</label><br /><br />
+        <input type="checkbox" name="terms_of_use" id="terms_of_use" required />
+        <label for="terms_of_use">
+          I swear that I totally read the terms of use
+        </label>
+        <br /><br />
+        <input type="submit" name="submit" value="Create your account" />
+      </form>
+    </div>
+  </body>
+</html>
