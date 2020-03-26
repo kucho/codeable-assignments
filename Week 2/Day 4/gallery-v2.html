@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Gallery V2</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        height: 100%;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 50px;
+      }
+      .featured {
+        width: 295px;
+        height: 293px;
+      }
+      .featured img {
+        width: 100%;
+      }
+      main {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-auto-rows: auto;
+        grid-gap: 15px 15px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .logo {
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="logo-icon">
+          <img src="./assets/ig_icon.png" alt="icon" />
+        </div>
+        <div class="logo"><img src="./assets/ig_logo.png" alt="logo" /></div>
+      </header>
+      <main>
+        <article class="featured">
+          <img src="./assets/last of us.png" alt="last of us" />
+        </article>
+        <article class="featured">
+          <img src="./assets/rogue one.png" alt="rogue one" />
+        </article>
+        <article class="featured">
+          <img src="./assets/french dispatch.png" alt="french dispatch" />
+        </article>
+        <article class="featured">
+          <img src="./assets/other bong movie.png" alt="other bong movie" />
+        </article>
+        <article class="featured">
+          <img src="./assets/birds of prey.png" alt="birds of prey" />
+        </article>
+        <article class="featured">
+          <img src="./assets/sony ps4.png" alt="sony ps4" />
+        </article>
+        <article class="featured">
+          <img src="./assets/last of us.png" alt="last of us" />
+        </article>
+        <article class="featured">
+          <img src="./assets/rogue one.png" alt="rogue one" />
+        </article>
+        <article class="featured">
+          <img src="./assets/french dispatch.png" alt="french dispatch" />
+        </article>
+        <article class="featured">
+          <img src="./assets/other bong movie.png" alt="other bong movie" />
+        </article>
+        <article class="featured">
+          <img src="./assets/birds of prey.png" alt="birds of prey" />
+        </article>
+        <article class="featured">
+          <img src="./assets/sony ps4.png" alt="sony ps4" />
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
