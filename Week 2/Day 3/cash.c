@@ -34,10 +34,9 @@ int main(void)
         change = get_float("Change owed: ");
     }
 
-    change = round(change * 100.0);
-    int change_int = change;
+    int change = (int)round(change * 100.0);
 
-    int minimo = change_counter(change_int);
+    int minimo = change_counter(change);
 
     printf("%i\n", minimo);
 }
