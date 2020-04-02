@@ -24,29 +24,24 @@ int main(int argc, char *argv[])
 
     char *text = "";
     // Validate the message
-    while (*text == '\0' || *text == '\40')
-    {
-        text = get_string("plaintext: ");
-    }
+    text = get_string("plaintext: ");
 
-    char *c = "";
-    int i = 0;
+    char c = "";
 
     // While is not the end and not null
-    while (text[i] != '\0')
+    for (int i = 0; i < strlen(text); i++)
     {
-        c = &text[i];
+        c = text[i];
         // If it is uppercase
-        if (*c >= 65 && *c <= 90)
+        if (isupper(c))
         {
-            text[i] = (*c + key - 65) % 26 + 65;
+            text[i] = (c + key - 'a') % 26 + 'a';
         }
         // If it is lowercase
-        if (*c >= 97 && *c <= 122)
+        if (islower(c))
         {
-            text[i] = (*c + key - 97) % 26 + 97;
+            text[i] = (c + key - 'A') % 26 + 'A';
         }
-        i++;
     }
 
     // Output transformed text
