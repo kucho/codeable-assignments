@@ -26,57 +26,42 @@ int main(int argc, char *argv[])
             printf("Key must only contain alphabetic characters.\n");
             return 1;
         }
-        else
+
+        // If its lowercase, make it uppercase
+        if (islower(key[i]))
         {
-            // If its lowercase, make it uppercase
-            if (key[i] >= 97 && key[i] <= 122)
-            {
-                key[i] = (key[i] - 97) % 26 + 65;
-            }
+            key[i] = toupper(key[i]);
         }
 
-        if (i > 0)
+        for (int j = 0; j < i; j++)
         {
-            for (int j = 0; j < i; j++)
+            // If they keys are duplicated, exit
+            if (key[i] == key[j])
             {
-                // If they keys are duplicated, exit
-                if (key[i] == key[j])
-                {
-                    printf("Key must not contain repeated characters.\n");
-                    return 1;
-                }
-
+                printf("Key must not contain repeated characters.\n");
+                return 1;
             }
+
         }
     }
 
-    char *text = "";
-    // Validate the message
-    while (*text == '\0' || *text == '\40')
-    {
-        text = get_string("plaintext: ");
-    }
+    string text = get_string("plaintext: ");
+    char c;
 
-    char *c = "";
-    int i = 0;
-
-    // While is not the end and not null
-    while (text[i] != '\0')
+    for (int i = 0; i < strlen(text); i++)
     {
-        c = &text[i];
+        c = text[i];
         // If it is uppercase
-        if (*c >= 65 && *c <= 90)
+        if (isupper(c))
         {
-            text[i] = key[(*c - 65)];
+            text[i] = key[(c - 'A')];
         }
         // If it is lowercase
-        if (*c >= 97 && *c <= 122)
+        if (islower(c))
         {
             // Get the new value and make it lowercase
-            text[i] = key[(*c - 97)] + 32;
+            text[i] = tolower(key[(c - 'a')]);
         }
-
-        i++;
     }
 
     // Output transformed text
