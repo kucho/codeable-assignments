@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations - Individual Assignment</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        margin: 0;
+        font-size: 18px;
+        line-height: 22px;
+        color: #595959;
+      }
+      a,
+      a:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+      }
+
+      .menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #ebebeb;
+      }
+
+      .menu li {
+        padding: 20px;
+        transition: 0.3s ease;
+      }
+
+      .menu > li:hover {
+        color: crimson;
+        position: relative;
+      }
+
+      .menu > li:hover::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: crimson;
+        bottom: -1px;
+        left: 0;
+      }
+
+      .multi {
+        position: relative;
+      }
+
+      .child-menu {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        width: max-content;
+        left: 0;
+        top: calc(100% + 1px);
+        border: 1px solid #ebebeb;
+        border-radius: 3px;
+        width: 250px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+      }
+
+      .multi:hover .child-menu {
+        display: block;
+      }
+
+      .multi:hover .child-menu li {
+        animation: dropdown 0.8s -0.5s forwards ease-out;
+      }
+
+      main {
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+      }
+
+      .spinner {
+        animation: spinit 1.3s infinite linear;
+      }
+
+      .shape {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shifter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation-name: triangle, circle, rectangle;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes dropdown {
+        0% {
+          height: 0;
+          padding: -100px 20px;
+          color: rgba(0, 0, 0, 0);
+        }
+        50% {
+          padding: 10px 20px;
+          color: rgba(0, 0, 0, 0);
+        }
+        100% {
+          color: #595959;
+          height: auto;
+          padding: 20px;
+        }
+      }
+
+      @keyframes spinit {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes triangle {
+        25% {
+          background-color: #2196f3;
+          transform-origin: left bottom;
+          transform: rotate(45deg);
+        }
+      }
+
+      @keyframes circle {
+        50% {
+          transform-origin: left bottom;
+          background-color: #f44336;
+          transform: rotate(90deg);
+          border-radius: 50%;
+        }
+      }
+
+      @keyframes rectangle {
+        100% {
+          transform-origin: left bottom;
+          background-color: #4caf50;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li class="multi">
+            <a href="#">Parent</a>
+            <ul class="child-menu">
+              <li><a href="#">Option 1</a></li>
+              <li><a href="#">Option 2</a></li>
+              <li><a href="#">Option 3</a></li>
+              <li><a href="#">Option 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <img class="spinner" src="./assets/Spinner.svg" alt="spinner" />
+      <div class="shape">
+        <div class="shifter"></div>
+      </div>
+    </main>
+  </body>
+</html>
