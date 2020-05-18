@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Overpass|Roboto&display=swap");
+.landing > * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+.landing {
+  margin-top: 156.05px;
+  margin-bottom: 81px;
+  overflow: auto;
+}
+.landing .description {
+  width: 550px;
+  float: left;
+  margin-top: 30px;
+  margin-left: 135px;
+}
+.landing .container-image {
+  width: 600px;
+  float: right;
+}
+.landing .container-image img {
+  width: 100%;
+}
+.landing .description h1 {
+  font-size: 60px;
+  line-height: 91px;
+  font-weight: bold;
+  color: #091133;
+  margin: 0;
+}
+.landing .description p {
+  color: #6f7cb2;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 45px;
+  padding: 40px 0;
+  margin: 0;
+}
+.landing .description a {
+  font-size: 18px;
+  height: 47px;
+  display: inline-block;
+  text-align: center;
+  line-height: 47px;
+  margin: 50px 0;
+  text-decoration: none;
+}
+.landing .description .btn-pricing {
+  background-color: #37447e;
+  color: #fff;
+  width: 270px;
+  margin-right: 30px;
+}
+.landing .description .btn-blog {
+  background-color: #e9ebec;
+  color: #091133;
+  width: 200px;
+}
+
+/* pricing css */
+
+#pricing {
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+  clear: both;
+}
+#pricing span {
+  font-size: 17px;
+  color: #666666;
+}
+#pricing h1 {
+  font-size: 46px;
+  line-height: 1.39;
+  letter-spacing: -1.5px;
+  margin-bottom: 8px;
+}
+.container-plans{
+ text-align: center;   
+}
+.plans {
+  display: inline-block;
+  border: 1px solid #c9ccd4;
+  border-radius: 10px;
+  background: #ebebf0;
+  width: 360px;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+  margin: 40px 15px ;
+}
+
+.plans h2 {
+  font-size: 36px;
+  margin: 36px;
+}
+.plans ul {
+  margin-top: 40px;
+  text-align: left;
+  margin-bottom: 90px;
+  padding-left: 100px;
+}
+.plans li {
+  font-size: 20px;
+  margin-right: 60px;
+  margin-bottom: 40px;
+}
+#pricing .btn-pricing {
+  font-size: 15px;
+  background-color: #929ecc;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  color: #fff;
+  width: 288px;
+  height: 60px;
+  margin-right: -10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#pricing .btn-pricing:hover {
+  background-color: rgb(50, 59, 97);
+}

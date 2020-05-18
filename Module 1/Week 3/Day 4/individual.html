@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations - Individual Assignment</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        margin: 0;
+        font-size: 18px;
+        line-height: 22px;
+        color: #595959;
+      }
+      a,
+      a:visited {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+      }
+
+      .menu {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #ebebeb;
+      }
+
+      .menu li {
+        padding: 20px;
+        transition: 0.3s ease;
+      }
+
+      .menu > li:hover {
+        color: crimson;
+        position: relative;
+      }
+
+      .menu > li:hover::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 100%;
+        background-color: crimson;
+        bottom: -1px;
+        left: 0;
+      }
+
+      .multi {
+        position: relative;
+      }
+
+      .child-menu::before {
+        content: "";
+        top: -10px;
+        left: 0;
+        position: absolute;
+        display: block;
+        background: transparent;
+        width: 100%;
+        height: 10px;
+      }
+
+      .child-menu {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        width: max-content;
+        left: 0;
+        top: calc(100% + 10px);
+        border: 1px solid #ebebeb;
+        border-radius: 3px;
+        width: 250px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+      }
+
+      .multi:hover .child-menu {
+        display: block;
+      }
+
+      .multi:hover .child-menu li {
+        animation: dropdown 0.8s -0.5s forwards ease-out;
+      }
+
+      main {
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+      }
+
+      .spinner {
+        animation: spinit 1.3s infinite linear;
+      }
+
+      .shape {
+        width: 50px;
+        height: 50px;
+        animation: shapeit 2s linear infinite;
+      }
+
+      @keyframes dropdown {
+        0% {
+          height: 0;
+          padding: -100px 20px;
+          color: rgba(0, 0, 0, 0);
+        }
+        50% {
+          padding: 10px 20px;
+          color: rgba(0, 0, 0, 0);
+        }
+        100% {
+          color: #595959;
+          height: auto;
+          padding: 20px;
+        }
+      }
+
+      @keyframes spinit {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes shapeit {
+        0% {
+          background-color: #4caf50;
+          transform: rotate(0deg);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+        33% {
+          background-color: #2196f3;
+          transform: rotate(45deg);
+          clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        }
+        66% {
+          clip-path: circle(50% at 50% 50%);
+          background-color: #f44336;
+          transform: rotate(40deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li class="multi">
+            <a href="#">Parent</a>
+            <ul class="child-menu">
+              <li><a href="#">Option 1</a></li>
+              <li><a href="#">Option 2</a></li>
+              <li><a href="#">Option 3</a></li>
+              <li><a href="#">Option 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <img class="spinner" src="assets/Spinner.svg" alt="spinner" />
+      <div class="shape"></div>
+    </main>
+  </body>
+</html>

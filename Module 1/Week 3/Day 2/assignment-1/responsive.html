@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>Build responsive websites - Assignment 1</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Overpass:300,400,700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Overpass", sans-serif;
+      }
+
+      .page {
+        display: grid;
+        grid-template-areas:
+          "experience"
+          "features";
+        grid-gap: 23.5px;
+      }
+
+      .oval {
+        background-color: #0ad1bd;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 8px 0;
+      }
+
+      .experience {
+        grid-area: experience;
+        display: grid;
+        grid-template-areas:
+          "header"
+          "exp-list";
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        padding: 0 23.5px;
+      }
+
+      .experience header {
+        grid-area: header;
+        padding: 23.5px;
+      }
+
+      .experience ul {
+        grid-area: exp-list;
+        list-style: none;
+        display: grid;
+        justify-content: center;
+      }
+
+      .experience li {
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        max-width: 200px;
+      }
+
+      .experience li:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+
+      .experience p,
+      .features p {
+        margin-top: 15px;
+        font-size: 17px;
+        line-height: 31px;
+        color: #666666;
+      }
+
+      .experience h1 {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: -1px;
+        color: #000000;
+      }
+
+      .experience h2 {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 34px;
+        text-align: center;
+        letter-spacing: -0.5px;
+        color: #000000;
+      }
+
+      .features {
+        grid-area: features;
+        display: grid;
+        grid-template-areas:
+          "info"
+          "hero";
+        padding: 0 22px 22px 22px;
+      }
+
+      .features h1 {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: -1.5px;
+        color: #000000;
+        margin-bottom: 10px;
+      }
+
+      .features h2 {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 32px;
+        color: #000000;
+      }
+
+      .hero {
+        grid-area: hero;
+      }
+
+      .hero img {
+        width: 100%;
+      }
+
+      .info {
+        grid-area: info;
+      }
+
+      .info img {
+        margin-right: 15px;
+        width: 25px;
+      }
+
+      .info ul {
+        list-style: none;
+      }
+
+      .info li {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        margin-bottom: 10px;
+      }
+
+      /* Mobile Styles
+      @media (max-width: 414px) {
+        body {
+          background-color: #f09a9d;
+        }
+      } */
+
+      /* Tablet Styles */
+      @media (min-width: 769px) and (max-width: 1023px) {
+        .page {
+          grid-gap: 0;
+        }
+
+        .experience {
+          grid-template-areas: "header exp-list";
+          padding: 25px;
+          text-align: left;
+        }
+
+        .experience h1,
+        .experience h2 {
+          text-align: left;
+        }
+
+        .experience p {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 28px;
+        }
+
+        .experience header {
+          padding: 0 25px;
+        }
+
+        .experience header p {
+          font-weight: normal;
+          font-size: 17px;
+          line-height: 31px;
+        }
+
+        .experience ul {
+          grid-template-columns: 1fr auto;
+          grid-gap: 15px;
+        }
+
+        .experience li {
+          min-width: 200px;
+          justify-items: left;
+        }
+
+        .features {
+          grid-template-areas:
+            "hero"
+            "info";
+        }
+
+        .features h1 {
+          margin-top: 25px;
+          margin-bottom: 15px;
+          text-align: left;
+        }
+
+        .info ul {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* Desktop Styles */
+      @media (min-width: 1024px) {
+        .page {
+          grid-gap: 0;
+        }
+
+        .experience {
+          margin: 75px 150px;
+          grid-template-areas: "header exp-list";
+          grid-gap: 100px;
+        }
+
+        .experience h1 {
+          text-align: left;
+          font-weight: bold;
+          font-size: 36px;
+          line-height: 48px;
+          letter-spacing: -1px;
+        }
+        .experience h2 {
+          text-align: left;
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 34px;
+          letter-spacing: -0.5px;
+          color: #000000;
+        }
+
+        .experience p {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 28px;
+          text-align: left;
+        }
+
+        .experience header {
+          max-width: 288px;
+          padding: 0;
+        }
+
+        .experience header p {
+          font-weight: normal;
+          font-size: 17px;
+          line-height: 31px;
+        }
+
+        .experience ul {
+          grid-template-columns: minmax(262px, 1fr) minmax(262px, 1fr);
+          grid-gap: 60px;
+        }
+
+        .experience li {
+          justify-items: left;
+          max-width: 270px;
+        }
+
+        .features {
+          grid-template-areas: "hero info";
+          grid-gap: 100px;
+          padding: 0;
+          margin: 75px 150px;
+        }
+
+        .features h1 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 46px;
+          line-height: 64px;
+          text-align: left;
+        }
+
+        .features h2 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 32px;
+        }
+
+        .hero {
+          display: grid;
+          align-items: center;
+        }
+
+        .info {
+          display: grid;
+          align-content: center;
+          align-items: center;
+        }
+
+        .info ul {
+          display: grid;
+        }
+
+        .info li {
+          margin-top: 50px;
+          grid-template-columns: 40px 408px;
+        }
+
+        .info p {
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <section class="experience">
+        <header>
+          <h1>Give your clients the best possible experience</h1>
+          <p>
+            The world has become so fast paced that people don’t want to stand
+            by reading a page of info
+          </p>
+        </header>
+        <ul>
+          <li>
+            <div class="oval">
+              <img src="assets/Star%20%5Bfilled%5D.svg" alt="star icon" />
+            </div>
+            <h2>Exportable Data Sets</h2>
+            <p>
+              Adwords Keyword research for beginners When you embark on your
+              first PPC journey.
+            </p>
+          </li>
+          <li>
+            <div class="oval">
+              <img src="assets/Mic.svg" alt="mic icon" />
+            </div>
+            <h2>Content Customization</h2>
+            <p>
+              With so many different ways today to find information online, it
+              can sometimes be hard to know
+            </p>
+          </li>
+          <li>
+            <div class="oval">
+              <img src="assets/Envelope.svg" alt="mail icon" />
+            </div>
+            <h2>One-off Emails</h2>
+            <p>
+              Photographs are a way of preserving a moment in our lives for the
+              rest of our lives. Many of us have.
+            </p>
+          </li>
+          <li>
+            <div class="oval">
+              <img src="assets/Settings.svg" alt="settings icon" />
+            </div>
+            <h2>Automation Workflows</h2>
+            <p>
+              Whenever you need to buy something that will go with whatever you
+              are wearing that day.
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section class="features">
+        <div class="hero">
+          <img src="assets/glass_bottle.png" alt="glass bottle" />
+        </div>
+        <div class="info">
+          <h1>Features</h1>
+          <ul>
+            <li>
+              <img src="assets/calendar.svg" alt="calendar icon" />
+              <div class="right-side">
+                <h2>Custom Conversion Tracking</h2>
+                <p>
+                  For most of us, the idea of astronomy is something we directly
+                  connect to “stargazing”, telescopes.
+                </p>
+              </div>
+            </li>
+            <li>
+              <img src="assets/chart.svg" alt="chart icon" />
+              <div class="righ-side">
+                <h2>Native Reports & Dashboards</h2>
+                <p>
+                  As soon as Computerized Tomography or CT scans became
+                  accessible in the 1970s.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

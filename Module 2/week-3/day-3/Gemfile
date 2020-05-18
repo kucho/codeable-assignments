@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+gem 'uri'
+gem 'io/console'
+gem 'http'
+gem 'dotenv'
+gem 'readline'
+gem 'json'

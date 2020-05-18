@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout 1</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100%;
+    }
+    .container {
+      text-align: center;
+      height: 100%;
+      display: grid;
+      grid-template: 100px auto 100px/ 100px 1fr;
+      grid-template-areas:
+        "navbar navbar"
+        "sidebar app"
+        "sidebar footer";
+    }
+    .navbar {
+      grid-area: navbar;
+      background-color: #ff5e5e;
+    }
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #faff00;
+    }
+    .app {
+      grid-area: app;
+      background-color: #20e056;
+    }
+    .footer {
+      grid-area: footer;
+      background-color: #c4c4c4;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="navbar">Navbar</div>
+      <div class="sidebar">Sidebar</div>
+      <div class="app">App</div>
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>

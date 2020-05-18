@@ -1,0 +1,17 @@
+<article class="blog-post">
+  <header>
+    <span class="blog-post-category">WEB DEVELOPMENT</span>
+    <h1 class="blog-post-title">
+      <%= post["title"] %>
+    </h1>
+    <ul class="blog-post-metadata">
+      <li>By <b><%= post["author"]%></b></li>
+      <li>March 28, 2020</li>
+      <li>10 comments</li>
+    </ul>
+  </header>
+  <img src="<%= post["imageuri"] %>"  />
+  <p class="blog-post-summary" >
+    <%= post["body"]%>
+  </p>
+</article>
