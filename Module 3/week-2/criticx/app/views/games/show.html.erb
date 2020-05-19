@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @game.price %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @game.release_date %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @company %>
+</p>
+
+<h3>Critics</h3>
+<ul>
+  <% @critics.each do |critic| %>
+    <li>
+      <p>
+        <strong>Username: </strong>
+        <%= critic.username %>
+      </p>
+      <p>
+        <strong>Title: </strong>
+        <%= critic.title %>
+      </p>
+      <p>
+        <strong>Body: </strong>
+        <%= critic.body %>
+      </p>
+    </li>
+    </ul>
+  <% end %>
+
+
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+  <%= link_to 'Back', games_path %>
